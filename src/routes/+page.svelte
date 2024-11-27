@@ -1,59 +1,24 @@
 <script lang="ts">
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcomeFallback from '$lib/images/svelte-welcome.png';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<div class="text-center py-16 px-8 bg-white">
+    <h1 class="text-5xl font-bold mb-4 text-gray-900">Welcome to GroceryDB</h1>
+    <p class="text-xl text-gray-600 max-w-xl mx-auto">Your comprehensive database of grocery products</p>
+</div>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcomeFallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+<section class="py-16 px-8 bg-white">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div class="p-8 bg-gray-50 rounded-lg transition-transform duration-200 hover:-translate-y-1">
+            <h3 class="text-2xl mb-4 text-gray-900">Product Search</h3>
+            <p class="text-gray-600 leading-relaxed">Search through thousands of grocery products with detailed information and pricing.</p>
+        </div>
+        <div class="p-8 bg-gray-50 rounded-lg transition-transform duration-200 hover:-translate-y-1">
+            <h3 class="text-2xl mb-4 text-gray-900">Categories</h3>
+            <p class="text-gray-600 leading-relaxed">Browse products by categories to find exactly what you're looking for.</p>
+        </div>
+        <div class="p-8 bg-gray-50 rounded-lg transition-transform duration-200 hover:-translate-y-1">
+            <h3 class="text-2xl mb-4 text-gray-900">Price Tracking</h3>
+            <p class="text-gray-600 leading-relaxed">Keep track of product prices and get notified of changes.</p>
+        </div>
+    </div>
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>

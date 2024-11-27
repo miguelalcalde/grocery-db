@@ -1,20 +1,20 @@
 <script lang="ts">
-	import Header from './Header.svelte';
 	import '../app.css';
+	import Navigation from '$lib/components/Navigation.svelte';
 
 	let { children } = $props();
 </script>
 
 <div class="app">
-	<Header />
+	<Navigation />
 
 	<main>
 		{@render children()}
 	</main>
 
-	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
+	<footer class="bg-gray-100">
+		<p class="text-center py-4 text-gray-600">
+			© 2024 GroceryDB. All rights reserved.
 		</p>
 	</footer>
 </div>
@@ -28,30 +28,10 @@
 
 	main {
 		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
+		max-width: 1200px;
 		margin: 0 auto;
+		padding: 2rem;
+		width: 100%;
 		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
 	}
 </style>
