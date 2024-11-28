@@ -1,4 +1,7 @@
 <script lang="ts">
+    import Nutriscore from './Nutriscore.svelte';
+    import Ecoscore from './Ecoscore.svelte';
+    
     export let product: {
         product_name: string | null;
         brands: string | null;
@@ -41,16 +44,12 @@
             <p class="text-sm text-gray-500 mb-2">{product.quantity}</p>
         {/if}
 
-        <div class="flex gap-2 mb-2">
+        <div class="flex items-center gap-2 mb-2">
             {#if product.nutriscore_grade}
-                <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">
-                    Nutri-Score: {product.nutriscore_grade.toUpperCase()}
-                </span>
+                <Nutriscore score={product.nutriscore_grade.toUpperCase() as 'A' | 'B' | 'C' | 'D' | 'E'} />
             {/if}
             {#if product.ecoscore_grade}
-                <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">
-                    Eco-Score: {product.ecoscore_grade.toUpperCase()}
-                </span>
+                <Ecoscore score={product.ecoscore_grade.toUpperCase() as 'A+' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F'} />
             {/if}
         </div>
 
